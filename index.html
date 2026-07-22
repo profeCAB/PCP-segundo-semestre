@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Pensamiento Computacional y Programación — Colegio Arriarán Barros</title>
+<style>
+  :root{
+    --bg:#fbfaf7;
+    --ink:#1f2420;
+    --ink-soft:#4a534c;
+    --line:#dcd6c9;
+    --accent:#2f6f4f;
+    --accent-soft:#e7f0e9;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Georgia', 'Iowan Old Style', serif;
+    line-height:1.6;
+  }
+  .wrap{max-width:780px; margin:0 auto; padding:56px 24px 96px;}
+  header{border-bottom:3px solid var(--ink); padding-bottom:24px; margin-bottom:40px;}
+  .eyebrow{
+    font-family:'Helvetica Neue', Arial, sans-serif;
+    font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--accent); font-weight:700; margin-bottom:10px;
+  }
+  h1{font-size:2rem; margin:0 0 10px; font-family:'Helvetica Neue', Arial, sans-serif; font-weight:800;}
+  .meta{font-family:'Helvetica Neue', Arial, sans-serif; color:var(--ink-soft); font-size:14px;}
+
+  h2.unidad{
+    font-size:1.15rem; margin:40px 0 14px;
+    font-family:'Helvetica Neue', Arial, sans-serif; font-weight:800;
+    display:flex; align-items:center; gap:10px;
+  }
+  h2.unidad .badge{
+    background:var(--ink); color:#fff; font-size:11px; padding:3px 10px;
+    border-radius:20px; letter-spacing:.04em;
+  }
+
+  .clase-list{list-style:none; margin:0; padding:0;}
+  .clase-item{
+    display:flex; align-items:center; gap:14px;
+    padding:14px 16px; margin-bottom:8px;
+    background:#fff; border:1px solid var(--line); border-radius:8px;
+    text-decoration:none; color:inherit;
+    transition:border-color .15s, transform .15s;
+  }
+  .clase-item.disponible{cursor:pointer;}
+  .clase-item.disponible:hover{border-color:var(--accent); transform:translateX(2px);}
+  .clase-item.pendiente{opacity:.5; cursor:default;}
+
+  .clase-fecha{
+    font-family:'Helvetica Neue', Arial, sans-serif; font-size:11.5px; font-weight:700;
+    color:var(--accent); background:var(--accent-soft); padding:4px 9px; border-radius:5px;
+    white-space:nowrap; min-width:64px; text-align:center;
+  }
+  .clase-item.pendiente .clase-fecha{color:var(--ink-soft); background:#eee7d8;}
+  .clase-titulo{font-family:'Helvetica Neue', Arial, sans-serif; font-weight:700; font-size:14.5px; flex:1;}
+  .clase-sub{display:block; font-weight:400; color:var(--ink-soft); font-size:12.5px; margin-top:2px;}
+  .clase-arrow{color:var(--accent); font-size:18px;}
+
+  footer{
+    margin-top:56px; padding-top:20px; border-top:1px solid var(--line);
+    font-family:'Helvetica Neue', Arial, sans-serif; font-size:12px; color:var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">Colegio Arriarán Barros · 3.°/4.° Medio</div>
+    <h1>🐍 Pensamiento Computacional y Programación</h1>
+    <div class="meta">Segundo semestre 2026 · 27 de julio – 19 de noviembre · Clases ejecutables en Python (motor Skulpt, sin instalación)</div>
+  </header>
+
+  <h2 class="unidad"><span class="badge">U1</span> De la Pizarra al Código</h2>
+  <ul class="clase-list">
+    <li class="clase-item disponible" onclick="location.href='U1_clase1.html'">
+      <span class="clase-fecha">27 jul</span>
+      <span class="clase-titulo">Clase 1: De la Pizarra al Código<span class="clase-sub">Variables, tipos de datos, condicionales, comparación</span></span>
+      <span class="clase-arrow">→</span>
+    </li>
+    <li class="clase-item disponible" onclick="location.href='U1_clase2.html'">
+      <span class="clase-fecha">29 jul</span>
+      <span class="clase-titulo">Clase 2: Consolidación<span class="clase-sub">Práctica progresiva, and/or, puente a ciclos</span></span>
+      <span class="clase-arrow">→</span>
+    </li>
+  </ul>
+
+  <h2 class="unidad"><span class="badge">U2</span> Ciclos</h2>
+  <ul class="clase-list">
+    <li class="clase-item disponible" onclick="location.href='u2_clase1_for_range.html'">
+      <span class="clase-fecha">30 jul</span>
+      <span class="clase-titulo">Clase 1: El ciclo for<span class="clase-sub">range(), tablas, patrones, for + if</span></span>
+      <span class="clase-arrow">→</span>
+    </li>
+    <li class="clase-item pendiente">
+      <span class="clase-fecha">03 ago</span>
+      <span class="clase-titulo">Clase 2: El ciclo while<span class="clase-sub">Próximamente</span></span>
+    </li>
+    <li class="clase-item pendiente">
+      <span class="clase-fecha">05 ago</span>
+      <span class="clase-titulo">Clase 3: Acumuladores y contadores<span class="clase-sub">Próximamente</span></span>
+    </li>
+    <li class="clase-item pendiente">
+      <span class="clase-fecha">06 ago</span>
+      <span class="clase-titulo">Clase 4: Ciclos anidados<span class="clase-sub">Próximamente</span></span>
+    </li>
+    <li class="clase-item pendiente">
+      <span class="clase-fecha">10 ago</span>
+      <span class="clase-titulo">Clase 5: Práctica integradora<span class="clase-sub">Próximamente</span></span>
+    </li>
+    <li class="clase-item pendiente">
+      <span class="clase-fecha">12 ago</span>
+      <span class="clase-titulo">Clase 6: Cierre de unidad<span class="clase-sub">Próximamente</span></span>
+    </li>
+  </ul>
+
+  <h2 class="unidad" style="opacity:.5;"><span class="badge" style="background:var(--ink-soft);">U3</span> Listas</h2>
+  <p style="font-family:'Helvetica Neue', Arial, sans-serif; font-size:13px; color:var(--ink-soft); margin-top:-6px;">Próximamente — a partir del 13 de agosto.</p>
+
+  <footer>
+    Pensamiento Computacional y Programación · Colegio Arriarán Barros — se actualiza a medida que avanza el semestre
+  </footer>
+
+</div>
+</body>
+</html>
