@@ -609,6 +609,141 @@ opcion = input("1) Depositar  2) Ver saldo  3) Salir  4) Registrar notas\nElige 
     </ol>
   </section>
 
+  <hr class="rule">
+
+  <!-- ACTIVIDADES COMPLEMENTARIAS -->
+  <section class="part" id="complementarias">
+    <span class="part-label" style="background:#a15a1f;">🌟 Actividades Complementarias</span>
+    <h2>Más Problemas Integradores</h2>
+    <p>3 problemas más, del mismo nivel que los de la clase — <strong>opcionales</strong>, para reforzar en casa o si te sobra tiempo. Cada uno combina varias herramientas de la unidad, igual que los de la Parte 1 y 2.</p>
+
+    <h3>Complementaria 1 — Sistema de Reservas de Cancha</h3>
+    <p>Valida con <code>while</code> que la cantidad de canchas ingresada sea mayor a 0. Con un <code>for</code> anidado, para cada cancha pide cuántas reservas tiene ese día, y para cada reserva pide el nombre de quien reserva. Cuenta el <strong>total de reservas de todas las canchas juntas</strong>, y muéstralo al final.</p>
+
+    <div class="codecell" data-cell data-cell-id="u2c5_comp1_canchas">
+      <div class="bar"><span class="label">Complementaria 1: Sistema de Reservas de Cancha</span><button class="runbtn" data-run>▶ Ejecutar</button></div>
+      <textarea class="codeinput" spellcheck="false" data-code># Combina: while (validación) + for anidado + contador
+cantidad_canchas = int(input("¿Cuántas canchas hay?: "))
+
+</textarea>
+      <div class="terminal-window">
+        <div class="terminal-header">
+          <span class="term-dot term-dot-red"></span>
+          <span class="term-dot term-dot-yellow"></span>
+          <span class="term-dot term-dot-green"></span>
+          <span class="term-title">Terminal · Python 3</span>
+        </div>
+        <div class="output" data-output><span class="term-placeholder">Presiona ▶ Ejecutar para ver el resultado aquí...</span></div>
+      </div>
+      <div class="log-status" data-log-status></div>
+    </div>
+
+    <details class="hint">
+      <summary>🆘 Pista de emergencia (Complementaria 1)</summary>
+      <pre><code>cantidad_canchas = int(input("¿Cuántas canchas hay?: "))
+while cantidad_canchas <= 0:
+    print("Debes ingresar un número mayor a 0")
+    cantidad_canchas = int(input("¿Cuántas canchas hay?: "))
+
+reservas_totales = 0
+
+for i in range(cantidad_canchas):
+    nombre_cancha = input(f"Nombre de la cancha {i + 1}: ")
+    cantidad_reservas = int(input(f"¿Cuántas reservas tiene {nombre_cancha}?: "))
+    for j in range(cantidad_reservas):
+        quien_reserva = input(f"  Nombre de quien hace la reserva {j + 1}: ")
+        reservas_totales = reservas_totales + 1
+
+print(f"Total de reservas en todas las canchas: {reservas_totales}")</code></pre>
+    </details>
+
+    <h3>Complementaria 2 — Control de Temperatura de Congeladores</h3>
+    <p>Muestra un menú (con <code>while</code>) con las opciones: <code>1</code> Registrar temperatura de un congelador, <code>2</code> Ver cuántas alertas van registradas, <code>3</code> Salir. Cada vez que registran una temperatura, si es mayor a -10°C, cuenta como <strong>alerta</strong> (temperatura peligrosamente alta para un congelador) y avisa. Al salir, muestra el total de alertas.</p>
+
+    <div class="codecell" data-cell data-cell-id="u2c5_comp2_congeladores">
+      <div class="bar"><span class="label">Complementaria 2: Control de Temperatura</span><button class="runbtn" data-run>▶ Ejecutar</button></div>
+      <textarea class="codeinput" spellcheck="false" data-code>alertas = 0
+opcion = input("1) Registrar temperatura  2) Ver alertas  3) Salir\nElige una opción: ")
+
+# Escribe aquí tu while con el menú
+
+</textarea>
+      <div class="terminal-window">
+        <div class="terminal-header">
+          <span class="term-dot term-dot-red"></span>
+          <span class="term-dot term-dot-yellow"></span>
+          <span class="term-dot term-dot-green"></span>
+          <span class="term-title">Terminal · Python 3</span>
+        </div>
+        <div class="output" data-output><span class="term-placeholder">Presiona ▶ Ejecutar para ver el resultado aquí...</span></div>
+      </div>
+      <div class="log-status" data-log-status></div>
+    </div>
+
+    <details class="hint">
+      <summary>🆘 Pista de emergencia (Complementaria 2)</summary>
+      <pre><code>alertas = 0
+opcion = input("1) Registrar temperatura  2) Ver alertas  3) Salir\nElige una opción: ")
+
+while opcion != "3":
+    if opcion == "1":
+        temp = float(input("Temperatura registrada (°C): "))
+        if temp > -10:
+            print("⚠️ ALERTA: temperatura muy alta")
+            alertas = alertas + 1
+        else:
+            print("Temperatura normal")
+    elif opcion == "2":
+        print("Alertas registradas hasta ahora:", alertas)
+    else:
+        print("Opción no válida")
+    opcion = input("1) Registrar temperatura  2) Ver alertas  3) Salir\nElige una opción: ")
+
+print(f"Sesión terminada. Total de alertas: {alertas}")</code></pre>
+    </details>
+
+    <h3>Complementaria 3 — Sistema de Encuestas</h3>
+    <p>Pide el nombre de un encuestado repetidamente (con <code>while</code>) hasta que escriban "fin". Para cada encuestado, con un ciclo <code>for</code> interno, pide sus respuestas a 3 preguntas (números del 1 al 5), acumulando su puntaje total. Muestra el puntaje de cada encuestado, y cuenta cuántos tuvieron puntaje mayor o igual a 12 (encuestados "satisfechos"). Al final, muestra el total de encuestados satisfechos.</p>
+
+    <div class="codecell" data-cell data-cell-id="u2c5_comp3_encuestas">
+      <div class="bar"><span class="label">Complementaria 3: Sistema de Encuestas</span><button class="runbtn" data-run>▶ Ejecutar</button></div>
+      <textarea class="codeinput" spellcheck="false" data-code>satisfechos = 0
+encuestado = input("Nombre del encuestado (o 'fin' para terminar): ")
+
+# Escribe aquí tu while con el for interno de 3 preguntas
+
+</textarea>
+      <div class="terminal-window">
+        <div class="terminal-header">
+          <span class="term-dot term-dot-red"></span>
+          <span class="term-dot term-dot-yellow"></span>
+          <span class="term-dot term-dot-green"></span>
+          <span class="term-title">Terminal · Python 3</span>
+        </div>
+        <div class="output" data-output><span class="term-placeholder">Presiona ▶ Ejecutar para ver el resultado aquí...</span></div>
+      </div>
+      <div class="log-status" data-log-status></div>
+    </div>
+
+    <details class="hint">
+      <summary>🆘 Pista de emergencia (Complementaria 3)</summary>
+      <pre><code>satisfechos = 0
+encuestado = input("Nombre del encuestado (o 'fin' para terminar): ")
+
+while encuestado != "fin":
+    puntaje = 0
+    for i in range(3):
+        respuesta = int(input(f"  Pregunta {i + 1} (1 a 5): "))
+        puntaje = puntaje + respuesta
+    print(f"{encuestado} obtuvo un puntaje de {puntaje}")
+    if puntaje >= 12:
+        satisfechos = satisfechos + 1
+    encuestado = input("Nombre del encuestado (o 'fin' para terminar): ")
+
+print(f"Total de encuestados satisfechos: {satisfechos}")</code></pre>
+    </details>
+  </section>
+
   <footer>
     Pensamiento Computacional y Programación · Colegio Arriarán Barros — Unidad 2, Clase 5 (Python real en el navegador vía Skulpt)
   </footer>
